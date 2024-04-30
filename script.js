@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     async function displayPosts() {
-        container.innerHTML = ''; // Clear the container before appending new posts
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
