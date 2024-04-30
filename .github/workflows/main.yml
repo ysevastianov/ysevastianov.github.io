@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'posts/**'
+  delete:
+    paths:
+      - 'posts/**'
 jobs:
   update-posts-list:
     runs-on: ubuntu-latest
