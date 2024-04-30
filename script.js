@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     const container = document.getElementById('posts-container');
     let loading = false;
     let page = 1; // Track the current page number
-    const postsPerPage = 1; // Specify the number of posts to load per page
-    let posts = []; // Array to store all post filenames
-    
+    const postsPerPage = 1; // Specify the number of posts to load per swipe
+
     async function loadPosts() {
         if (loading) return;
         loading = true;
@@ -23,8 +22,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function displayPosts() {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
-        const visiblePosts = posts.slice(start, end);
-        
+        const visiblePosts = posts.slice(start, end).reverse(); // Reverse the order
+    
         for (const postFileName of visiblePosts) {
             try {
                 const response = await fetch(`posts/${postFileName}`);
@@ -39,16 +38,34 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
     }
-    
-    // Detect scroll event
-    window.addEventListener('scroll', function() {
-        // Check if user has scrolled to the bottom of the page
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-            page++;
-            displayPosts();
+
+    // Function to handle swipe gestures
+    function handleSwipe(event) {
+        const touchStartX = event.touches[0].clientX;
+        let touchEndX;
+
+        function onTouchMove(e) {
+            touchEndX = e.touches[0].clientX;
         }
-    });
-    
+
+        function onTouchEnd() {
+            if (touchEndX < touchStartX) {
+                // Swipe left (next page)
+                page++;
+                displayPosts();
+            }
+            // Remove event listeners
+            document.removeEventListener('touchmove', onTouchMove);
+            document.removeEventListener('touchend', onTouchEnd);
+        }
+
+        document.addEventListener('touchmove', onTouchMove);
+        document.addEventListener('touchend', onTouchEnd);
+    }
+
+    // Add swipe gesture event listener
+    document.addEventListener('touchstart', handleSwipe);
+
     // Initial load
     await loadPosts();
 });
