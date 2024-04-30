@@ -27,7 +27,7 @@ p {
 }
 
 pre {
-    font-size: 8px; /* Adjust the font size as needed */
-    line-height: 1; /* Adjust the line height as needed */
+    font-size: 2em; /* Adjust the font size as needed */
+    line-height: 1em; /* Adjust the line height as needed */
     /* You can also use other CSS properties to control the appearance of the text */
 }
