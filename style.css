@@ -31,6 +31,10 @@ p {
     color: orange; /* Set color of "guest@" to white */
 }
 
+.at {
+    color: white; /* Set color of "guest@" to white */
+}
+
 .date {
     color: lime; /* Set color of date to white */
 }
