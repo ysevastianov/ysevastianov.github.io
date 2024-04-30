@@ -27,10 +27,10 @@ p {
 }
 
 pre {
-    background: linear-gradient(to top right, red 0%, violet 25%, blue 40%, cyan 75%, green 85%);
+    background: linear-gradient(to top right, red 0%, violet 25%, blue 50%, green 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 0.6em; /* Adjust the font size as needed */
+    font-size: 0.65em; /* Adjust the font size as needed */
     line-height: 1em; /* Adjust the line height as needed */
     /* You can also use other CSS properties to control the appearance of the text */
 }
