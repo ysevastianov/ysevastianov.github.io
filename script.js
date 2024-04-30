@@ -80,10 +80,4 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Add swipe gesture event listener
     document.addEventListener('touchstart', handleSwipe);
-
-    // Initial load
-    await loadPosts();
-
-    // Add swipe gesture event listener
-    document.addEventListener('touchstart', handleSwipe);
 });
