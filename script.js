@@ -42,10 +42,26 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
-        if (event.deltaY > 0) { // Swipe down (next page)
-            page++;
-            displayPosts();
+        const touchStartY = event.touches[0].clientY;
+        let touchEndY;
+    
+        function onTouchMove(e) {
+            touchEndY = e.touches[0].clientY;
         }
+    
+        function onTouchEnd() {
+            if (touchEndY > touchStartY) { // Changed the condition to detect an upward swipe
+                // Swipe up (previous page)
+                page++;
+                displayPosts();
+            }
+            // Remove event listeners
+            document.removeEventListener('touchmove', onTouchMove);
+            document.removeEventListener('touchend', onTouchEnd);
+        }
+    
+        document.addEventListener('touchmove', onTouchMove);
+        document.addEventListener('touchend', onTouchEnd);
     }
 
     // Function to handle scroll gestures
