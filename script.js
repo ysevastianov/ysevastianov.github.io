@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     async function displayPosts() {
-        container.innerHTML = ''; 
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
     
-        for (const postFileName of visiblePosts) {
+        for (let i = 0; i < visiblePosts.length; i++) {
+            const postFileName = visiblePosts[i];
             try {
                 const response = await fetch(`posts/${postFileName}`);
                 const postContent = await response.text();
