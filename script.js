@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function displayPosts() {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
-        const visiblePosts = posts.slice(start, end)
+        const visiblePosts = posts.slice(start, end); // Remove the reverse here
     
         for (const postFileName of visiblePosts) {
             try {
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         function onTouchEnd() {
-            if (touchEndY < touchStartY) {
-                // Swipe up (next page)
+            if (touchEndY > touchStartY) { // Changed the condition to detect a downward swipe
+                // Swipe down (next page)
                 page++;
                 displayPosts();
             }
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle scroll gestures
     function handleScroll(event) {
-        if (event.deltaY < 0) {
-            // Scroll up (next page)
+        if (event.deltaY > 0) {
+            // Scroll down (next page)
             page++;
             displayPosts();
         }
@@ -75,9 +75,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Initial load
     await loadPosts();
 
-    // Add swipe gesture event listener
-    document.addEventListener('touchstart', handleSwipe);
-
     // Add scroll gesture event listener
     window.addEventListener('wheel', handleScroll);
+
+    // Initial load
+    await loadPosts();
+
+    // Add swipe gesture event listener
+    document.addEventListener('touchstart', handleSwipe);
 });
