@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let loading = false;
     let page = 1; // Track the current page number
     const postsPerPage = 10; // Specify the number of posts to load per page
-    let posts = []; // Array to store all posts
+    let posts = []; // Array to store all post filenames
     
     function loadPosts() {
         if (loading) return;
@@ -27,11 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
         
-        visiblePosts.forEach(post => {
-            const postContainer = document.createElement('div');
-            postContainer.className = 'post';
-            postContainer.innerHTML = post.htmlContent;
-            container.appendChild(postContainer);
+        visiblePosts.forEach(postFileName => {
+            fetch(`posts/${postFileName}`)
+                .then(response => response.text())
+                .then(postContent => {
+                    const postContainer = document.createElement('div');
+                    postContainer.className = 'post';
+                    postContainer.innerHTML = postContent;
+                    container.appendChild(postContainer);
+                })
+                .catch(err => {
+                    console.error('Failed to load post content:', err);
+                });
         });
     }
     
