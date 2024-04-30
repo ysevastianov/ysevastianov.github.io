@@ -1,0 +1,27 @@
+name: Update Posts List
+on:
+  push:
+    paths:
+      - 'posts/**'
+jobs:
+  update-posts-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Generate posts list
+        run: node script-to-generate-posts-json.js
+
+      - name: Commit posts.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add posts/posts.json
+          git commit -m "Update posts list" || echo "No changes to commit"
+          git push
