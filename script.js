@@ -34,15 +34,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 postContainer.className = 'post';
                 postContainer.innerHTML = postContent;
                 container.appendChild(postContainer);
-
-                // Create and append the cursor span
-                const cursor = document.createElement('span');
-                cursor.classList.add('cursor');
-                cursor.textContent = '|';
-                postContainer.appendChild(cursor);
             } catch (err) {
                 console.error('Failed to load post content:', err);
             }
+        }
+        // Remove any existing cursors
+        const existingCursors = document.querySelectorAll('.cursor');
+        existingCursors.forEach(cursor => cursor.remove());
+    
+        // Add cursor to the last post if it's the last page
+        if (page === totalPages) {
+            const lastPost = container.lastElementChild;
+            const cursor = document.createElement('span');
+            cursor.classList.add('cursor');
+            cursor.textContent = '|';
+            lastPost.appendChild(cursor);
         }
     }
 
