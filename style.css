@@ -32,4 +32,11 @@ pre {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/* Fallback style for mobile devices */
+@media screen and (max-width: 600px) {
+    pre {
+        background: none;
+        color: lime; /* Fallback color for text */
+    }
+}
 
