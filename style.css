@@ -20,6 +20,7 @@ body {
 
 p {
     color: white;
+    font-family: 'Courier New', Courier, monospace; 
 }
 
 .terminal {
