@@ -25,3 +25,9 @@ h1, h2 {
 p {
     color: lime;
 }
+
+pre {
+    font-size: 16px; /* Adjust the font size as needed */
+    line-height: 1.5; /* Adjust the line height as needed */
+    /* You can also use other CSS properties to control the appearance of the text */
+}
