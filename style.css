@@ -28,19 +28,19 @@ p {
 }
 
 .guest {
-    color: white; /* Set color of "guest@" to white */
+    color: orange; /* Set color of "guest@" to white */
 }
 
 .date {
-    color: white; /* Set color of date to white */
+    color: lime; /* Set color of date to white */
 }
 
 .prompt {
-    color: white; /* Set color of prompt to white */
+    color: orange; /* Set color of prompt to white */
 }
 
 .tilde {
-    color: white; /* Set color of tilde to white */
+    color: orange; /* Set color of tilde to white */
 }
 
 pre {
