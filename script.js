@@ -42,8 +42,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
-        page++;
-        displayPosts();
+        if (event.deltaY > 0) {
+            page++;
+            displayPosts();
+        }
     }
 
     // Function to handle scroll gestures
@@ -60,6 +62,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Add scroll gesture event listener
     window.addEventListener('wheel', handleScroll);
+    
+    // Add swipe gesture event listener
+    document.addEventListener('touchstart', handleSwipe);
 
     // Initial load
     await loadPosts();
