@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 postContainer.className = 'post';
                 postContainer.innerHTML = postContent;
                 container.appendChild(postContainer);
+
+                // Create and append the cursor span
+                const cursor = document.createElement('span');
+                cursor.classList.add('cursor');
+                cursor.textContent = '|';
+                postContainer.appendChild(cursor);
             } catch (err) {
                 console.error('Failed to load post content:', err);
             }
