@@ -28,7 +28,7 @@ p {
 
 pre {
     font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(to bottom right, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
+    background: linear-gradient(to top left, red 0%, violet 20%, blue 50%, cyan 80%, green 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
