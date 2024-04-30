@@ -54,6 +54,7 @@ pre {
 
 .cursor {
     animation: blink 1s infinite; /* Adjust animation duration as needed */
+    color: white;
 }
 
 @keyframes blink {
