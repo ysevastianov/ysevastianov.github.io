@@ -23,35 +23,34 @@ p {
 }
 
 .terminal {
-    color: lime; /* Set default text color to lime */
-    font-family: 'Courier New', Courier, monospace; /* Set font-family */
+    color: lime; 
+    font-family: 'Courier New', Courier, monospace; 
 }
 
 .guest {
-    color: orange; /* Set color of "guest@" to white */
+    color: orange; 
 }
 
 .at {
-    color: white; /* Set color of "guest@" to white */
+    color: white; 
 }
 
 .date {
-    color: lime; /* Set color of date to white */
+    color: lime;
 }
 
 .prompt {
-    color: orange; /* Set color of prompt to white */
+    color: orange; 
 }
 
 .tilde {
-    color: orange; /* Set color of tilde to white */
+    color: orange;
 }
 
 pre {
     background: linear-gradient(to top right, red 0%, violet 25%, blue 50%, green 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 0.64em; /* Adjust the font size as needed */
-    line-height: 1em; /* Adjust the line height as needed */
-    /* You can also use other CSS properties to control the appearance of the text */
+    font-size: 0.64em; 
+    line-height: 1em; 
 }
