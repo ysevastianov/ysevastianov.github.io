@@ -18,19 +18,30 @@ body {
     padding-bottom: 10px;
 }
 
-h1, h2 {
-    color: white;
+h4 {
+    background-color: #000;
+    color: lime;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+h4:before {
+    content: "$ ";
+    color: #0f0; /* Green color for the prompt symbol */
 }
 
 p {
-    color: lime;
+    color: white;
 }
 
 pre {
     background: linear-gradient(to top right, red 0%, violet 25%, blue 50%, green 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 0.65em; /* Adjust the font size as needed */
+    font-size: 0.64em; /* Adjust the font size as needed */
     line-height: 1em; /* Adjust the line height as needed */
     /* You can also use other CSS properties to control the appearance of the text */
 }
