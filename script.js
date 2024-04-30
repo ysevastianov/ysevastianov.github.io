@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
-        if (event.deltaY < 0) { // Swipe down (next page)
             page++;
             displayPosts();
         }
