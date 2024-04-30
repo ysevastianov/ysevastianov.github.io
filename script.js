@@ -21,13 +21,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     async function displayPosts() {
+        container.innerHTML = ''; // Clear the container before appending new posts
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
     
-        // Start the loop from index 1 to skip the first post
-        for (let i = 1; i < visiblePosts.length; i++) {
-            const postFileName = visiblePosts[i];
+        for (const postFileName of visiblePosts) {
             try {
                 const response = await fetch(`posts/${postFileName}`);
                 const postContent = await response.text();
@@ -58,12 +57,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             displayPosts();
         }
     }
-
-    // Initial load
-    await loadPosts();
-
-    // Add scroll gesture event listener
-    window.addEventListener('wheel', handleScroll);
 
     // Initial load
     await loadPosts();
