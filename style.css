@@ -28,22 +28,13 @@ p {
 
 pre {
     font-family: 'Courier New', Courier, monospace;
-    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
-    background: -o-linear-gradient(right, red, orange, yellow, green, blue, indigo, violet);
-    background: -moz-linear-gradient(right, red, orange, yellow, green, blue, indigo, violet);
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background: -webkit-linear-gradient(left, red 0%, violet 20%, blue 40%, cyan 60%, green 80%);
+    background: -o-linear-gradient(right, red 0%, violet 20%, blue 40%, cyan 60%, green 80%);
+    background: -moz-linear-gradient(right, red 0%, violet 20%, blue 40%, cyan 60%, green 80%);
+    background: linear-gradient(to right, red 0%, violet 20%, blue 40%, cyan 60%, green 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
 }
 
-/* Gradient covering only a portion of the text */
-pre.partial-gradient {
-    font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(to right, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, indigo 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
