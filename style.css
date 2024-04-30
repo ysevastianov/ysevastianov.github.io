@@ -37,3 +37,13 @@ pre {
     background-clip: text;
     text-fill-color: transparent;
 }
+
+/* Gradient covering only a portion of the text */
+pre.partial-gradient {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, indigo 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
