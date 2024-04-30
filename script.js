@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     async function displayPosts() {
+        container.innerHTML = ''; 
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
@@ -56,6 +57,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             displayPosts();
         }
     }
+
+    // Initial load
+    await loadPosts();
+
+    // Add scroll gesture event listener
+    window.addEventListener('wheel', handleScroll);
 
     // Initial load
     await loadPosts();
