@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('posts-container');
             posts.forEach(post => {
                 const div = document.createElement('div');
-                div.innerHTML = `<a href="posts/${post}">${post}</a>`;
+                const postTitle = post.replace(/-/g, ' ').replace('.html', '');
+                div.innerHTML = `<a href="posts/${post}">${postTitle}</a>`;
                 container.appendChild(div);
             });
         })
