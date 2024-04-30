@@ -19,7 +19,6 @@ body {
 }
 
 h4 {
-    background-color: #000;
     color: lime;
     font-family: 'Courier New', Courier, monospace;
     padding: 5px 10px;
@@ -29,8 +28,12 @@ h4 {
 }
 
 h4:before {
-    content: "$ ";
-    color: #0f0; /* Green color for the prompt symbol */
+    content: "guest";
+    color: #white; /* Green color for the prompt symbol */
+}
+h4:after {
+    content: ":$ ~ ";
+    color: #white; /* Green color for the prompt symbol */
 }
 
 p {
