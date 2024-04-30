@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.addEventListener('touchend', onTouchEnd);
     }
 
-    // Add swipe gesture event listener
-    document.addEventListener('touchstart', handleSwipe);
-
     // Initial load
     await loadPosts();
+
+    // Add swipe gesture event listener
+    document.addEventListener('touchstart', handleSwipe);
 });
