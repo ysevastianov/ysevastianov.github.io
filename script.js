@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         const end = start + postsPerPage;
         const visiblePosts = posts.slice(start, end);
     
-        for (let i = 0; i < visiblePosts.length; i++) {
+        // Start the loop from index 1 to skip the first post
+        for (let i = 1; i < visiblePosts.length; i++) {
             const postFileName = visiblePosts[i];
             try {
                 const response = await fetch(`posts/${postFileName}`);
