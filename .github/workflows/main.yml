@@ -19,10 +19,9 @@ jobs:
         run: node .github/workflows/script-to-generate-posts-json.js
 
       - name: Commit posts.json
-        shell: bash_wrapper {0}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add posts/posts.json
           git commit -m "Update posts list" || echo "No changes to commit"
-          bash git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
