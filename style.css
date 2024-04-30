@@ -51,3 +51,22 @@ pre {
     font-size: 0.64em; 
     line-height: 1em; 
 }
+
+.cursor {
+    display: inline-block;
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    background-color: white; /* Or any other color you prefer */
+    border-radius: 50%; /* Makes it a circle */
+    animation: blink 1s infinite; /* Adjust animation duration as needed */
+    position: absolute;
+    /* Adjust top and left properties to position the cursor */
+    top: 0;
+    left: 0;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
