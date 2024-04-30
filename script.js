@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // List your post files here
     const posts = [
-        'posts/test.html'
+        'posts/test.html',
         'posts/test2.html'
     ];
 
