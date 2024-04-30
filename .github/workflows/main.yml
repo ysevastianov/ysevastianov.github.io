@@ -16,7 +16,7 @@ jobs:
           node-version: '14'
 
       - name: Generate posts list
-        run: node script-to-generate-posts-json.js
+        run: node .github/workflows/script-to-generate-posts-json.js
 
       - name: Commit posts.json
         run: |
