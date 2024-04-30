@@ -42,9 +42,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
-            page++;
-            displayPosts();
-        }
+        page++;
+        displayPosts();
     }
 
     // Function to handle scroll gestures
