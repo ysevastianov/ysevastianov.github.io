@@ -1,18 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const postsContainer = document.getElementById('posts');
-
-    // List your post files here
-    const posts = [
-        'posts/test.html',
-        'posts/test2.html'
-    ];
-
-    posts.forEach(function(post) {
-        fetch(post)
-            .then(response => response.text())
-            .then(html => {
-                postsContainer.innerHTML += `<div class="post">${html}</div>`;
-            })
-            .catch(err => console.error('Error loading the post:', err));
-    });
+    fetch('posts/posts.json')
+        .then(response => response.json())
+        .then(posts => {
+            const container = document.getElementById('posts-container');
+            posts.forEach(post => {
+                const div = document.createElement('div');
+                div.innerHTML = `<a href="posts/${post}">${post}</a>`;
+                container.appendChild(div);
+            });
+        })
+        .catch(err => console.error('Failed to load posts:', err));
 });
