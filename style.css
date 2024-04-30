@@ -28,13 +28,8 @@ p {
 
 pre {
     font-family: 'Courier New', Courier, monospace;
-    background: -webkit-linear-gradient(left, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
-    background: -o-linear-gradient(right, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
-    background: -moz-linear-gradient(right, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
-    background: linear-gradient(to right, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
+    background: linear-gradient(to bottom right, red 0px, violet 100px, blue 200px, cyan 300px, green 500px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 }
 
