@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         function onTouchEnd() {
-            if (touchEndY > 0) { // Swipe down (next page)
+            if (touchEndY < touchStartY) { // Swipe down (next page)
                 page++;
                 displayPosts();
             }
