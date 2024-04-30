@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         try {
             const response = await fetch('posts/posts.json');
             posts = await response.json();
+            posts.reverse();
             displayPosts();
             loading = false;
         } catch (err) {
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function displayPosts() {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
-        const visiblePosts = posts.slice(start, end); // Remove the reverse here
+        const visiblePosts = posts.slice(start, end);
     
         for (const postFileName of visiblePosts) {
             try {
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         function onTouchEnd() {
-            if (touchEndY > touchStartY) { // Changed the condition to detect a downward swipe
+            if (touchEndY < touchStartY) { // Changed the condition to detect a downward swipe
                 // Swipe down (next page)
                 page++;
                 displayPosts();
