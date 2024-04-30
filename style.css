@@ -18,26 +18,29 @@ body {
     padding-bottom: 10px;
 }
 
-h4 {
-    color: lime;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 5px 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-h4:before {
-    content: "guest";
-    color: #white; /* Green color for the prompt symbol */
-}
-h4:after {
-    content: ":$ ~ ";
-    color: #white; /* Green color for the prompt symbol */
-}
-
 p {
     color: white;
+}
+
+.terminal {
+    color: lime; /* Set default text color to lime */
+    font-family: 'Courier New', Courier, monospace; /* Set font-family */
+}
+
+.guest {
+    color: white; /* Set color of "guest@" to white */
+}
+
+.date {
+    color: white; /* Set color of date to white */
+}
+
+.prompt {
+    color: white; /* Set color of prompt to white */
+}
+
+.tilde {
+    color: white; /* Set color of tilde to white */
 }
 
 pre {
