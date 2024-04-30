@@ -27,16 +27,7 @@ p {
 }
 
 pre {
-    font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(to top right, red, violet, indigo, blue, cyan, green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: indigo;
 }
-/* Fallback style for mobile devices */
-@media screen and (max-width: 600px) {
-    pre {
-        background: lime;
-        color: lime; /* Fallback color for text */
-    }
-}
+
 
