@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const container = document.getElementById('posts-container');
     let loading = false;
     let page = 1; // Track the current page number
-    const postsPerPage = 1; // Specify the number of posts to load per swipe
+    const postsPerPage = 1; // Specify the number of posts to load per interaction
 
     async function loadPosts() {
         if (loading) return;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function displayPosts() {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
-        const visiblePosts = posts.slice(start, end).reverse(); // Reverse the order
+        const visiblePosts = posts.slice(start, end)
     
         for (const postFileName of visiblePosts) {
             try {
@@ -41,16 +41,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
-        const touchStartX = event.touches[0].clientX;
-        let touchEndX;
+        const touchStartY = event.touches[0].clientY;
+        let touchEndY;
 
         function onTouchMove(e) {
-            touchEndX = e.touches[0].clientX;
+            touchEndY = e.touches[0].clientY;
         }
 
         function onTouchEnd() {
-            if (touchEndX < touchStartX) {
-                // Swipe left (next page)
+            if (touchEndY < touchStartY) {
+                // Swipe up (next page)
                 page++;
                 displayPosts();
             }
@@ -63,9 +63,21 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.addEventListener('touchend', onTouchEnd);
     }
 
+    // Function to handle scroll gestures
+    function handleScroll(event) {
+        if (event.deltaY < 0) {
+            // Scroll up (next page)
+            page++;
+            displayPosts();
+        }
+    }
+
     // Initial load
     await loadPosts();
 
     // Add swipe gesture event listener
     document.addEventListener('touchstart', handleSwipe);
+
+    // Add scroll gesture event listener
+    window.addEventListener('wheel', handleScroll);
 });
