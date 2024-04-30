@@ -1,4 +1,2 @@
-# ysevastianov.github.io
-
-# test
-### synchro test
+ysevastianov.github.io
+personal dairy/blog based on github pages
