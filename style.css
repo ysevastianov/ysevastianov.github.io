@@ -61,6 +61,10 @@ p {
     font-family: 'Courier New', Courier, monospace; 
     font-size: 0.85em;
     filter: blur(0.5px);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    animation: flicker 1s infinite;
 }
 
 .terminal {
