@@ -28,12 +28,12 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     transform-origin: center center;
-    transform: scale3d(1.2, 0.9, 1.1); /* Constant scaling to mimic curvature */
+    transform: scale3d(1.05, 0.95, 1.2); /* Constant scaling to mimic curvature */
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
 }
 
 @keyframes flicker {
-    0%, 100% { text-shadow: 0 0 10px rgba(0, 255, 0, 1); }
-    50% { text-shadow: 0 0 20px rgba(0, 255, 0, 1); }
+    0%, 100% { text-shadow: 0 0 5px rgba(0, 255, 0, 1); }
+    50% { text-shadow: 0 0 10px rgba(0, 255, 0, 1); }
 }
