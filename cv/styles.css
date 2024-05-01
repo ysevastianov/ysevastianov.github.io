@@ -18,17 +18,15 @@ body {
     background-color: #000;
     color: #0f0;
     font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
     height: 100%;
     box-shadow: inset 0 0 20px #000;
-    border-radius: 12px;
     filter: saturate(4);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     overflow: hidden;
 }
 
 pre {
-    font-size: 16px;
+    font-size: 14px;
     white-space: pre-wrap;
     word-wrap: break-word;
     transform-origin: center center;
