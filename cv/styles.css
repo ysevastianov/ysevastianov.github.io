@@ -30,11 +30,11 @@ body {
 }
 
 pre {
-    font-size: 18px;
+    font-size: 1em;
     white-space: pre-wrap;
     word-wrap: break-word;
     transform-origin: center center;
-    transform: scale3d(1.2, 0.9, 1.1);
+    transform: scale3d(1.2, 0.9, 1.3);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
 }
@@ -43,9 +43,3 @@ pre {
     0%, 100% { text-shadow: 0 0 5px rgba(0, 255, 0, 1); }
     50% { text-shadow: 0 0 8px rgba(0, 255, 0, 1); }
 }
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    body {
-        font-size: 5px; /* Smaller base font size */
-    }
