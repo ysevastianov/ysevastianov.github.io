@@ -36,10 +36,6 @@ body {
     border-radius: 12px;
 }
 
-@keyframes blink {
-    0%, 100% { filter: brightness(100%); }
-    50% { filter: brightness(80%); }
-}
 
 pre {
     font-size: 16px;
