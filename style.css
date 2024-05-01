@@ -5,7 +5,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Ensures no scrolling outside the viewport */
-    height: 100vh; /* Full viewport height */
     position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
 
@@ -16,9 +15,9 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse, transparent 60%, black 120%);
+    background: radial-gradient(ellipse, transparent 40%, black 130%);
     pointer-events: none; /* Allows interaction with elements below */
-    transform: scale(1.05); /* Adjust scale for desired fisheye effect */
+    transform: scale(1.2); /* Adjust scale for desired fisheye effect */
 }
 
 .container {
