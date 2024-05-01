@@ -19,16 +19,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             loading = false;
         }
     }
-    // Remove any existing cursors
-    const existingCursors = document.querySelectorAll('.cursor');
-    existingCursors.forEach(cursor => cursor.remove());
-    
-    // Add cursor to the terminal paragraph
-    const terminalParagraph = document.querySelector('.terminal');
-    const cursor = document.createElement('span');
-    cursor.classList.add('cursor');
-    cursor.textContent = '|';
-    terminalParagraph.appendChild(cursor);
     
     async function displayPosts() {
         const start = (page - 1) * postsPerPage;
@@ -48,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.error('Failed to load post content:', err);
             }
         }
-
+    }
     // Function to handle swipe gestures
     function handleSwipe(event) {
         const touchStartY = event.touches[0].clientY;
