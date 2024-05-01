@@ -23,7 +23,7 @@ body::after {
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     margin: auto;
     padding: 10px;
     padding-bottom: 30px;
@@ -61,7 +61,7 @@ body::after {
 p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
-    font-size: 0.65em;
+    font-size: 0.55em;
     filter: blur(0.5px);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
