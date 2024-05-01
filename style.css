@@ -108,3 +108,8 @@ pre {
     font-size: 0.64em; 
     line-height: 1em; 
 }
+
+@keyframes flicker {
+    0%, 100% { text-shadow: 0 0 5px rgba(0, 255, 0, 1); }
+    50% { text-shadow: 0 0 8px rgba(0, 255, 0, 1); }
+}
