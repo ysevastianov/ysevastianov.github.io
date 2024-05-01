@@ -7,14 +7,14 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .post {
     border: None;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-bottom: 10px;
 }
 
