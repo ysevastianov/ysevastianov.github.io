@@ -4,10 +4,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ensures no scrolling outside the viewport */
-    overflow-x: hidden;
     height: 100vh;
-    width: 90%;
+    width: 95%;
     position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
 
