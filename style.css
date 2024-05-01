@@ -31,7 +31,8 @@ body {
 
 .info-message {
     margin: 0;
-    padding: 30px;
+    padding: 3px;
+    padding-right: 30px;
 }
 
 .post {
