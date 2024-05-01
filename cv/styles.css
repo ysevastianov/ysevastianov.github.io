@@ -7,16 +7,6 @@ body {
     margin: 0;
 }
 
-.monitor {
-    background-color: #000;
-    border-radius: 15px;
-    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.5);
-    width: 80%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    transform: scale(1.2); /* Slightly enlarge to mimic screen curvature */
-}
-
 
 .screen {
     animation: flicker 1s infinite;
