@@ -1,27 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const preElement = document.querySelector('pre');  // Consistently use 'pre' selector
+    const preElement = document.querySelector('pre');
 
-    // Memory update interval set to 2 seconds
+    // Update memory every 2 seconds
     setInterval(function() {
-        updateMemory(preElement);  // Pass 'preElement' to the function
-    }, 2000); 
+        updateMemory(preElement);
+    }, 2000);
 
-    // Random flickering effect
+    // Start the random flickering effect
+    randomFlicker();
+
     function randomFlicker() {
         let flickerDuration = Math.random() * 1000 + 500; // Random duration between 500ms and 1500ms
         preElement.style.animationDuration = `${flickerDuration}ms`;
         setTimeout(randomFlicker, flickerDuration);
     }
-    randomFlicker();
 });
 
-// Define 'updateMemory' to accept 'preElement' as an argument
 function updateMemory(preElement) {
     const memUsed = Math.floor(Math.random() * 300000) + 700000;
     const memFree = 1000000 - memUsed;
     const memOutput = `KiB Mem : 1000000 total, ${memFree} free, ${memUsed} used, 200000 buff/cache`;
 
     const lines = preElement.textContent.split('\n');
-    lines[2] = memOutput;
-    preElement.textContent = lines.join('\n');
+    if (lines.length > 2) {  // Check if the specific line exists
+        lines[2] = memOutput;
+        preElement.textContent = lines.join('\n');
+    } else {
+        console.log("Error: Specified line for memory status not found.");
+    }
 }
