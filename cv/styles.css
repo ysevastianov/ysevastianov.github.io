@@ -19,6 +19,7 @@ body {
     color: #0f0;
     font-family: 'Courier New', Courier, monospace;
     height: 100%;
+    width: 100%;
     box-shadow: inset 0 0 20px #000;
     filter: saturate(4);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
@@ -26,7 +27,7 @@ body {
 }
 
 pre {
-    font-size: 14px;
+    font-size: 18px;
     white-space: pre-wrap;
     word-wrap: break-word;
     transform-origin: center center;
@@ -43,5 +44,5 @@ pre {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     body {
-        font-size: 0.05em; /* Smaller base font size */
+        font-size: 5px; /* Smaller base font size */
     }
