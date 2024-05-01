@@ -112,7 +112,7 @@ pre {
     line-height: 1em; 
     filter: blur(0.5px);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
-    animation: flicker 1s infinite;
+    animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
