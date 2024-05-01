@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const screen = document.querySelector('.screen');
 
-    function randomBlink() {
-        let randomTime = Math.random() * 3000 + 500; // Random time between 500ms and 3500ms
-        screen.style.animationDuration = `${randomTime}ms`;
-        setTimeout(randomBlink, randomTime);
+    function randomFlicker() {
+        let randomDuration = Math.random() * 1000 + 500; // Random duration between 500ms and 1500ms
+        screen.style.animationDuration = `${randomDuration}ms`;
+        setTimeout(randomFlicker, randomDuration);
     }
 
-    randomBlink();
+    randomFlicker();
 });
 
 function updateMemory() {
