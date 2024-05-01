@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     randomFlicker();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    setInterval(updateMemory, 2000);  // Calls updateMemory every 2 seconds
+});
+
 function updateMemory() {
     const memUsed = Math.floor(Math.random() * 300000) + 700000;
     const memFree = 1000000 - memUsed;
