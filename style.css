@@ -16,7 +16,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, transparent 50%, black 90%);
+    background: radial-gradient(circle, transparent 40%, black 99%);
     pointer-events: none; /* Allows interaction with elements below */
     transform: scale(1.2); /* Adjust scale for desired fisheye effect */
 }
@@ -60,6 +60,7 @@ p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
     font-size: 0.85em;
+    filter: blur(0.5px);
 }
 
 .terminal {
