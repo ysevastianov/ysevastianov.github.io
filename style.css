@@ -44,14 +44,6 @@ p {
     color: white; 
 }
 
-pre {
-    background: linear-gradient(to top right, red 0%, violet 25%, blue 50%, green 85%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 0.64em; 
-    line-height: 1em; 
-}
-
 .cursor {
     display: inline;
     animation: blink 1s infinite; /* Adjust animation duration as needed */
@@ -63,4 +55,12 @@ pre {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+pre {
+    background: linear-gradient(to top right, red 0%, violet 25%, blue 50%, green 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.64em; 
+    line-height: 1em; 
 }
