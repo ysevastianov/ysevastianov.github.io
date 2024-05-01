@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    setInterval(updateMemory, 5000);
+    const screen = document.querySelector('.screen');
+    setInterval(() => {
+        screen.style.opacity = (screen.style.opacity == 0.9 ? 1 : 0.9);
+    }, 500);
 });
 
 function updateMemory() {
