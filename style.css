@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     height: 90vh;
-    width: 90.5%;
+    width: 90.8%;
     position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
 
