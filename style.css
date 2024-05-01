@@ -53,6 +53,7 @@ pre {
 }
 
 .cursor {
+    display: inline-block;
     animation: blink 1s infinite; /* Adjust animation duration as needed */
     color: white;
 }
