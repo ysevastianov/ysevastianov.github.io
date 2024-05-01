@@ -17,10 +17,6 @@ body {
     transform: scale(1.2); /* Slightly enlarge to mimic screen curvature */
 }
 
-@keyframes flicker {
-    0%, 100% { text-shadow: 0 0 10px rgba(0, 255, 0, 1); }
-    50% { text-shadow: 0 0 20px rgba(0, 255, 0, 1); }
-}
 
 .screen {
     animation: flicker 1s infinite;
@@ -39,4 +35,16 @@ pre {
     font-size: 16px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    animation: flicker 1s infinite, scaleText 10s infinite alternate;
+    transform-origin: center center; /* Ensures scaling is centered */
+}
+
+@keyframes flicker {
+    0%, 100% { text-shadow: 0 0 10px rgba(0, 255, 0, 1); }
+    50% { text-shadow: 0 0 20px rgba(0, 255, 0, 1); }
+}
+
+@keyframes scaleText {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
 }
