@@ -38,17 +38,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.error('Failed to load post content:', err);
             }
         }
-    // Remove any existing cursors
-    const existingCursors = document.querySelectorAll('.cursor');
-    existingCursors.forEach(cursor => cursor.remove());
-
-    // Add cursor to the last post of the current page
-    const lastPostContainer = container.lastElementChild;
-    const cursor = document.createElement('span');
-    cursor.classList.add('cursor');
-    cursor.textContent = '|';
-    lastPostContainer.appendChild(cursor);
-    }
 
     // Function to handle swipe gestures
     function handleSwipe(event) {
