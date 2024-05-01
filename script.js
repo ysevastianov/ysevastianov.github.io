@@ -3,7 +3,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     let loading = false;
     let page = 1; // Track the current page number
     const postsPerPage = 1; // Specify the number of posts to load per interaction
+    // Start the random flickering effect
+    randomFlicker();
 
+    function randomFlicker() {
+        let flickerDuration = Math.random() * 3000 + 1000; // Random duration between 1000ms and 4000ms
+        preElement.style.animationDuration = `${flickerDuration}ms`;
+        setTimeout(randomFlicker, flickerDuration);
+    }
     async function loadPosts() {
         if (loading) return;
         loading = true;
