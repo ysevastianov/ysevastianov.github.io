@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Ensures no scrolling outside the viewport */
+    overflow-x: hidden;
     height: 100vh;
     position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
@@ -37,6 +38,7 @@ body::after {
     color: #FFF;
     font-size: 10px; /* Adjust the font size as needed */
     padding: 5px 10px; /* Adjust padding as needed */
+    box-sizing: border-box;
 }
 
 .info-panel {
