@@ -10,6 +10,29 @@ body {
     width: 90%;
     margin: auto;
     padding: 10px;
+    padding-bottom: 30px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: #FFF;
+    font-size: 10px; /* Adjust the font size as needed */
+    padding: 5px 10px; /* Adjust padding as needed */
+}
+
+.info-panel {
+    display: flex;
+    align-items: center; /* Align items horizontally */
+    justify-content: space-between; /* Spread items across the container */
+}
+
+.info-message {
+    margin: 0;
+    padding: 3px;
+    border-bottom: 1px solid #FFF;
 }
 
 .post {
