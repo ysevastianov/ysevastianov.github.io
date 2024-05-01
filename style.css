@@ -19,11 +19,11 @@ body::after {
     bottom: 0;
     background: radial-gradient(ellipse, transparent 40%, black 110%);
     pointer-events: none; /* Allows interaction with elements below */
-    transform: scale(1.2); /* Adjust scale for desired fisheye effect */
+    transform: scale(1); /* Adjust scale for desired fisheye effect */
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     margin: auto;
     padding: 10px;
     padding-bottom: 30px;
