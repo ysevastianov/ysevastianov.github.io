@@ -6,12 +6,12 @@ body {
     padding: 0;
     overflow: hidden; /* Ensures no scrolling outside the viewport */
     height: 100vh; /* Full viewport height */
-    position: absolute; /* Needed for absolute positioning of pseudo-elements */
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
 
 body::after {
     content: '';
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
