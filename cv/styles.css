@@ -1,17 +1,35 @@
 body {
     background-color: #000;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.top-command {
-    margin: 20px;
+.monitor {
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.5);
+    width: 80%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    transform: scale(1.02); /* Slightly enlarge to mimic screen curvature */
+}
+
+.screen {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    height: 100%;
+    box-shadow: inset 0 0 10px #000,
+                inset 0 0 100px rgba(0, 255, 0, 0.2); /* Inner glow */
+    border-radius: 12px;
 }
 
 pre {
     font-size: 16px;
-}
-
-#top-output {
-    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
