@@ -7,7 +7,7 @@ body {
     overflow: hidden; /* Ensures no scrolling outside the viewport */
     overflow-x: hidden;
     height: 100vh;
-    width: 100%;
+    width: 90%;
     position: relative; /* Needed for absolute positioning of pseudo-elements */
 }
 
