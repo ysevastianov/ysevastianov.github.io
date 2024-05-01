@@ -1,12 +1,12 @@
 body {
     background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+.top-command {
+    margin: 20px;
+}
 
 .screen {
     animation: flicker 1s infinite;
@@ -27,7 +27,7 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     transform-origin: center center;
-    transform: scale(1.2); /* Constant scaling to mimic curvature */
+    transform: scale(1.2, 0.9); /* Constant scaling to mimic curvature */
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
 }
