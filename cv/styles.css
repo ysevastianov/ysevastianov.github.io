@@ -2,6 +2,11 @@ body {
     background-color: #000;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
+    display: flex;          /* Makes body a flex container */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center;    /* Centers children vertically */
+    height: 100vh;          /* Full viewport height */
+    margin: 0;              /* Remove default margin */
 }
 
 .top-command {
@@ -40,5 +45,5 @@ pre {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     body {
-        font-size: 0.3em; /* Smaller base font size */
+        font-size: 0.05em; /* Smaller base font size */
     }
