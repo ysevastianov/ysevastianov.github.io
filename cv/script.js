@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const screen = document.querySelector('.screen');
-
+    const preElement = document.querySelector('pre');
+    
     function randomFlicker() {
-        let randomDuration = Math.random() * 1000 + 500; // Random duration between 500ms and 1500ms
-        screen.style.animationDuration = `${randomDuration}ms`;
-        setTimeout(randomFlicker, randomDuration);
+        let flickerDuration = Math.random() * 1000 + 500; // Random duration between 500ms and 1500ms
+        preElement.style.animationDuration = `${flickerDuration}ms`;
+        setTimeout(randomFlicker, flickerDuration);
     }
 
     randomFlicker();
