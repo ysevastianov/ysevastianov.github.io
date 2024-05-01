@@ -61,7 +61,7 @@ body::after {
 p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
-    font-size: 0.55em;
+    font-size: 0.85em;
     filter: blur(0.5px);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
