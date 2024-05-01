@@ -25,9 +25,9 @@ pre {
     animation: flicker 1s infinite;
     margin: 0;
     padding: 10px;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
-    border-radius: 50%; /* Makes the container circular */
+    border-radius: 5%; /* Makes the container circular */
     overflow: hidden; /* Ensures no text spills outside the container */
     position: relative;
     filter: blur(0.5px);
