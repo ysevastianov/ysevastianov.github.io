@@ -17,7 +17,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse, transparent 40%, black 130%);
+    background: radial-gradient(ellipse, transparent 40%, black 110%);
     pointer-events: none; /* Allows interaction with elements below */
     transform: scale(1.2); /* Adjust scale for desired fisheye effect */
 }
@@ -33,7 +33,7 @@ body::after {
 .footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 90%;
     background-color: #000;
     color: #FFF;
     font-size: 10px; /* Adjust the font size as needed */
