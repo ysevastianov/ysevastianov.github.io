@@ -40,16 +40,5 @@ pre {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     body {
-        font-size: 12px; /* Smaller base font size */
+        font-size: 0.3em; /* Smaller base font size */
     }
-
-    .top-command, .screen {
-        margin: 10px; /* Smaller margins */
-        padding: 10px; /* Smaller padding */
-    }
-
-    pre {
-        font-size: 12px; /* Smaller text size for 'pre' */
-        transform: scale3d(1, 0.8, 1); /* Less pronounced scaling */
-    }
-}
