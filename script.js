@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.error('Failed to load post content:', err);
             }
         }
+        // Remove any existing cursors
+        const existingCursors = document.querySelectorAll('.cursor');
+        existingCursors.forEach(cursor => cursor.remove());
+        
+        // Add cursor to the terminal paragraph
+        const terminalParagraph = document.querySelector('.terminal');
+        const cursor = document.createElement('span');
+        cursor.classList.add('cursor');
+        cursor.textContent = '|';
+        terminalParagraph.appendChild(cursor);
     }
     // Function to handle swipe gestures
     function handleSwipe(event) {
