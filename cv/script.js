@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateMemory(preElement) {
     const memUsed = Math.floor(Math.random() * 300000) + 700000;
     const memFree = 1000000 - memUsed;
-    const memOutput = `KiB Mem : 1000000 total, ${memFree} free, ${memUsed} used, 200000 buff/cache`;
+    const memOutput = `            KiB Mem : 1000000 total, ${memFree} free, ${memUsed} used, 200000 buff/cache`;
 
     const lines = preElement.textContent.split('\n');
     if (lines.length > 2) {  // Check if the specific line exists
