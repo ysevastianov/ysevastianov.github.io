@@ -16,7 +16,7 @@ body {
 .footer {
     position: fixed;
     bottom: 0;
-    width: 90%;
+    width: 100%;
     background-color: #000;
     color: #FFF;
     font-size: 10px; /* Adjust the font size as needed */
@@ -31,7 +31,7 @@ body {
 
 .info-message {
     margin: 0;
-    padding: 3px;
+    padding: 30px;
 }
 
 .post {
