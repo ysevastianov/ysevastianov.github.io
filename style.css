@@ -16,9 +16,9 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, transparent 40%, black 99%);
+    background: radial-gradient(circle, transparent 60%, black 99%);
     pointer-events: none; /* Allows interaction with elements below */
-    transform: scale(1.2); /* Adjust scale for desired fisheye effect */
+    transform: scale(1.05); /* Adjust scale for desired fisheye effect */
 }
 
 .container {
