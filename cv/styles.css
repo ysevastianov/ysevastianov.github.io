@@ -1,0 +1,17 @@
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.top-command {
+    margin: 20px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+#top-output {
+    white-space: pre;
+}
