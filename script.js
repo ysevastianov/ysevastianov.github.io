@@ -42,12 +42,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         const existingCursors = document.querySelectorAll('.cursor');
         existingCursors.forEach(cursor => cursor.remove());
         
-        // Add cursor to the terminal paragraph
-        const terminalParagraph = document.querySelector('.terminal');
+        // Find the last visible terminal paragraph
+        const terminalParagraphs = document.querySelectorAll('.terminal');
+        const lastVisibleTerminal = terminalParagraphs[terminalParagraphs.length - 1];
+        
+        // Add cursor to the last visible terminal paragraph
         const cursor = document.createElement('span');
         cursor.classList.add('cursor');
         cursor.textContent = '|';
-        terminalParagraph.appendChild(cursor);
+        lastVisibleTerminal.appendChild(cursor);
     }
     // Function to handle swipe gestures
     function handleSwipe(event) {
