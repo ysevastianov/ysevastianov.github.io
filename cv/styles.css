@@ -23,6 +23,26 @@ pre {
     word-wrap: break-word;
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Ensures no text spills outside the container */
+    position: relative;
+    filter: blur(0.5px);
+}
+
+pre::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, black 80%);
+    pointer-events: none; /* Allows text selection behind the overlay */
 }
 
 @keyframes flicker {
