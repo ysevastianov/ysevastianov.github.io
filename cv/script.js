@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     randomFlicker();
 
     function randomFlicker() {
-        let flickerDuration = Math.random() * 1000 + 500; // Random duration between 500ms and 1500ms
+        let flickerDuration = Math.random() * 3000 + 1000; // Random duration between 1000ms and 4000ms
         preElement.style.animationDuration = `${flickerDuration}ms`;
         setTimeout(randomFlicker, flickerDuration);
     }
