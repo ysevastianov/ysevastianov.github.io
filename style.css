@@ -33,7 +33,7 @@ body::after {
 .footer {
     position: fixed;
     bottom: 0;
-    width: 90%;
+    width: 100%;
     background-color: #000;
     color: #FFF;
     font-size: 10px; /* Adjust the font size as needed */
@@ -61,7 +61,7 @@ body::after {
 p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
-    font-size: 0.85em;
+    font-size: 0.75em;
     filter: blur(0.5px);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
