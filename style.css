@@ -16,7 +16,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse, transparent 60%, black 99%);
+    background: radial-gradient(ellipse, transparent 80%, black 99%);
     pointer-events: none; /* Allows interaction with elements below */
     transform: scale(1.05); /* Adjust scale for desired fisheye effect */
 }
@@ -59,7 +59,7 @@ body::after {
 p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
-    font-size: 0.85em;
+    font-size: 0.8em;
     filter: blur(0.5px);
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -93,6 +93,9 @@ p {
     animation: blink 1s infinite; /* Adjust animation duration as needed */
     color: white;
     vertical-align: text-bottom;
+    filter: blur(0.5px);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    animation: flicker 1s infinite;
 }
 
 @keyframes blink {
@@ -107,6 +110,9 @@ pre {
     -webkit-text-fill-color: transparent;
     font-size: 0.64em; 
     line-height: 1em; 
+    filter: blur(0.5px);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    animation: flicker 1s infinite;
 }
 
 @keyframes flicker {
