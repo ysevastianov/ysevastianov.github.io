@@ -54,8 +54,8 @@ pre::after {
 /* Media query for screens wider than 768px */
 @media (min-width: 768px) {
     pre {
-        font-size: 2.5em; /* Increased font size */
-        padding: 50px; /* Larger padding */
+        font-size: 1em; /* Increased font size */
+        padding: 25px; /* Larger padding */
     }
     pre::after {
         transform: translate(-50%, -50%) scale(3); /* Larger scale for the radial gradient effect */
