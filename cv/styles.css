@@ -19,15 +19,12 @@ body {
 
 pre {
     color: white;
-    font-size: 0.5em;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    font-size: 0.85em;
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
     margin: 0;
     padding: 10px;
     width: 100%;
-    box-sizing: border-box;
     border-radius: 15%; /* Makes the container circular */
     overflow: hidden; /* Ensures no text spills outside the container */
     position: relative;
