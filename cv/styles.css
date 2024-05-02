@@ -26,6 +26,7 @@ pre {
     padding: 10px;
     width: 100%;
     border-radius: 15%; /* Makes the container circular */
+    box-sizing: border-box;
     overflow: hidden; /* Ensures no text spills outside the container */
     position: relative;
     filter: blur(0.5px);
