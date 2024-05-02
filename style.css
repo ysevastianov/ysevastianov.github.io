@@ -39,7 +39,7 @@ body::after {
     font-size: 12px; /* Adjust the font size as needed */
     padding: 5px 10px; /* Adjust padding as needed */
     box-sizing: border-box;
-    filter: saturate(4);
+    filter: blur(0.5px) saturate(4);
 }
 
 .info-panel {
@@ -109,7 +109,7 @@ pre {
     -webkit-text-fill-color: transparent;
     font-size: 0.64em; 
     line-height: 1em; 
-    filter: blur(0.5px);
+    filter: blur(0.5px) saturate(4);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 2s infinite;
 }
