@@ -51,6 +51,7 @@ body::after {
 .info-message {
     margin: 0;
     padding: 3px;
+    color: white;
 }
 
 .post {
