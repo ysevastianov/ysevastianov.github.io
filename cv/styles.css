@@ -28,6 +28,7 @@ pre {
     /*word-wrap: break-word; */
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
+    justify-content: center;
     margin: 0;
     padding: 10px;
     width: 100%;
