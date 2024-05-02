@@ -19,7 +19,9 @@ body {
 
 pre {
     color: white;
-    font-size: 0.85em;
+    font-size: 0.5em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
     margin: 0;
