@@ -10,7 +10,7 @@ body {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-context: center;
+    justify-content: center;
     box-shadow: inset 0 0 20px #000;
     filter: saturate(4);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
@@ -49,4 +49,15 @@ pre::after {
 @keyframes flicker {
     0%, 100% { text-shadow: 0 0 5px rgba(0, 255, 0, 1); }
     50% { text-shadow: 0 0 8px rgba(0, 255, 0, 1); }
+}
+
+/* Media query for screens wider than 768px */
+@media (min-width: 768px) {
+    pre {
+        font-size: 2.5em; /* Increased font size */
+        padding: 50px; /* Larger padding */
+    }
+    pre::after {
+        transform: translate(-50%, -50%) scale(3); /* Larger scale for the radial gradient effect */
+    }
 }
