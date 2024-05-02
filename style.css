@@ -62,10 +62,9 @@ p {
     color: white;
     font-family: 'Courier New', Courier, monospace; 
     font-size: 0.85em;
-    filter: blur(0.5px);
+    filter: blur(0.5px) saturate(4);
     text-shadow: 0 0 10px rgba(0, 255, 0, 1);
     animation: flicker 1s infinite;
-    filter: saturate(4);
 }
 
 .terminal {
