@@ -28,7 +28,7 @@ function drawGrid() {
     }
 }
 
-function drawBalls() {
+/*function drawBalls() {
     balls.forEach(ball => {
         ctx.beginPath();
         ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
@@ -36,7 +36,28 @@ function drawBalls() {
         ctx.fill();
         ctx.closePath();
     });
+}*/
+
+// Drawing balls with flickering effect
+function drawBalls() {
+    balls.forEach(ball => {
+        if (ball.color === 'lime') {
+            ctx.shadowColor = 'lime';
+            ctx.shadowBlur = 20; // Flickering effect shadow
+        }
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
+        ctx.fillStyle = ball.color;
+        ctx.fill();
+        ctx.closePath();
+        ctx.shadowBlur = 0; // Reset shadow blur after drawing
+    });
 }
+
+// Optionally apply blur using canvas context directly
+ctx.filter = 'blur(0.5px)';
+// Draw elements that need blurring
+ctx.filter = 'none'; // Reset filter after use
 
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
