@@ -18,7 +18,7 @@ body::after {
     bottom: 0;
     background: linear-gradient(0deg, transparent 80%, black 130%);
     pointer-events: none; /* Allows interaction with elements below */
-    transform: scale(1, 1.2); /* Adjust scale for desired fisheye effect */
+    transform: scale(1.2, 1); /* Adjust scale for desired fisheye effect */
 }
 
 .container {
