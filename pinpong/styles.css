@@ -23,17 +23,15 @@ canvas {
 }
 
 .overlay {
+    animation: flicker 1s infinite;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, transparent 40%, black 80%);
+    background: radial-gradient(circle, transparent 80%, black 120%);
+    filter: blur(0.5px);
     pointer-events: none; /* Makes sure the overlay doesn't interfere with canvas interaction */
-}
-
-.flicker {
-    animation: flicker 1s infinite;
 }
 
 .blur {
