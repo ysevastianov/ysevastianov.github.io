@@ -1,8 +1,8 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 500;  // Size of canvas - each cell being 5x5 for a 100x100 grid
-canvas.height = 500;
+canvas.width = 200;  // Size of canvas - each cell being 5x5 for a 100x100 grid
+canvas.height = 200;
 
 const gridSize = 20; // Number of cells in one row/column
 const cellSize = canvas.width / gridSize; // Size of each cell in pixels
@@ -13,7 +13,7 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
 }
 
-const ballRadius = 12;
+const ballRadius = 9;
 const balls = [
     { x: 120, y: 220, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
     { x: 370, y: 330, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
