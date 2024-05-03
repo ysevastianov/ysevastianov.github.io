@@ -13,6 +13,41 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'lime' : 'black');
 }
 
+// Function to apply a simple fisheye effect
+function applyFisheye() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    const width = imageData.width;
+    const height = imageData.height;
+    const tempCanvas = document.createElement('canvas');
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCanvas.width = width;
+    tempCanvas.height = height;
+
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const dx = x / width - 0.5;
+            const dy = y / height - 0.5;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const angle = Math.atan2(dy, dx);
+            const r = Math.pow(distance, 0.8);
+            const sx = Math.cos(angle) * r * width + width / 2;
+            const sy = Math.sin(angle) * r * height + height / 2;
+            const i = (y * width + x) * 4;
+            const si = (Math.floor(sy) * width + Math.floor(sx)) * 4;
+            data[i] = data[si];
+            data[i + 1] = data[si + 1];
+            data[i + 2] = data[si + 2];
+        }
+    }
+
+    tempCtx.putImageData(imageData, 0, 0);
+    ctx.drawImage(tempCanvas, 0, 0);
+}
+
+// Apply the fisheye effect
+applyFisheye();
+
 const ballRadius = 4;
 const balls = [
     { x: 44, y: 55, dx: 2, dy: 2, color: 'black', targetColor: 'lime' },
