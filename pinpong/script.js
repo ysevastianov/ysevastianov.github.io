@@ -13,17 +13,11 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'lime' : 'black');
 }
 
-/*const ballRadius = 4;
+const ballRadius = 4;
 const balls = [
     { x: 44, y: 55, dx: 2, dy: 2, color: 'black', targetColor: 'lime' },
     { x: 155, y: 40, dx: -2, dy: -2, color: 'lime', targetColor: 'black' }
-];*/
-
-
-const balls = [
-    { x: 4, y: 5, dx: 1, dy: 1, color: 'black', targetColor: 'lime' }, // Use cell indices instead of pixel values
-    { x: 15, y: 4, dx: -1, dy: -1, color: 'lime', targetColor: 'black' }
-];
+]
 
 function drawGrid() {
     const borderWidth = 1; // Define the effective border width
