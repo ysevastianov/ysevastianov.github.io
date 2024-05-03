@@ -91,7 +91,6 @@ function updateGame() {
             ball.dy = -ball.dy;
             ball.y += ball.dy;
         }
-        grid[ball.y][ball.x] = ball.color;
 
         // Check for collision with grid squares
         let gridX = Math.floor(ball.x / cellSize);
