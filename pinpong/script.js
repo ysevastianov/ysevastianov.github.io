@@ -1,8 +1,8 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 500;  // Size of canvas - each cell being 5x5 for a 100x100 grid
-canvas.height = 500;
+canvas.width = 200;  // Size of canvas - each cell being 5x5 for a 100x100 grid
+canvas.height = 200;
 
 const gridSize = 20; // Number of cells in one row/column
 const cellSize = canvas.width / gridSize; // Size of each cell in pixels
