@@ -1,22 +1,22 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 500;  // Adjust size to fit 100x100 grid (each cell 5x5 pixels)
+canvas.width = 500;  // Size of canvas - each cell being 5x5 for a 100x100 grid
 canvas.height = 500;
 
-const gridSize = 100; // 100x100 grid
-const cellSize = canvas.width / gridSize; // Each cell size
+const gridSize = 100; // Number of cells in one row/column
+const cellSize = canvas.width / gridSize; // Size of each cell in pixels
 const grid = new Array(gridSize);
 
-// Initialize grid with colors
+// Initialize the grid with alternating colors
 for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
 }
 
 const ballRadius = 5;
 const balls = [
-    { x: 125, y: 250, dx: 2, dy: 2, color: 'orange' },
-    { x: 375, y: 250, dx: -2, dy: -2, color: 'blue' }
+    { x: 125, y: 250, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
+    { x: 375, y: 250, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
 ];
 
 function drawGrid() {
@@ -44,9 +44,11 @@ function updateGame() {
     drawBalls();
 
     balls.forEach(ball => {
+        // Move the balls
         ball.x += ball.dx;
         ball.y += ball.dy;
 
+        // Wall collision detection
         if (ball.x + ballRadius > canvas.width || ball.x - ballRadius < 0) {
             ball.dx = -ball.dx;
         }
@@ -58,8 +60,9 @@ function updateGame() {
         let gridX = Math.floor(ball.x / cellSize);
         let gridY = Math.floor(ball.y / cellSize);
 
-        if (grid[gridX][gridY] !== ball.color) {
-            grid[gridX][gridY] = ball.color;
+        // Change the color of the grid square if it matches the target color of the ball
+        if (grid[gridX][gridY] === ball.targetColor) {
+            grid[gridX][gridY] = ball.color;  // Change to ball's color
         }
     });
 }
