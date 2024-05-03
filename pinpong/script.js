@@ -1,40 +1,34 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 500;  // Size of canvas - each cell being 5x5 for a 100x100 grid
+canvas.width = 500;  // Size of canvas remains
 canvas.height = 500;
 
-const gridSize = 100; // Number of cells in one row/column
-const cellSize = canvas.width / gridSize; // Size of each cell in pixels
-const grid = new Array(gridSize);
+const gridCols = 40; // Total number of columns (20 per half)
+const gridRows = 20; // Total number of rows
+const cellSize = canvas.width / gridCols; // Each cell size adjusted
 
-// Initialize the grid with alternating colors
-for (let i = 0; i < gridSize; i++) {
-    grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
-}
+const grid = new Array(gridRows).fill(null).map(() => new Array(gridCols).fill('blue').fill('orange', gridCols / 2));
 
-const ballRadius = 5;
+const objectSize = cellSize; // Objects are now the same size as cells
 const balls = [
-    { x: 120, y: 220, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
-    { x: 370, y: 330, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
+    { x: objectSize * 10, y: objectSize * 10, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
+    { x: objectSize * 30, y: objectSize * 10, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
 ];
 
 function drawGrid() {
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++) {
+    for (let i = 0; i < gridRows; i++) {
+        for (let j = 0; j < gridCols; j++) {
             ctx.fillStyle = grid[i][j];
-            ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+            ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
         }
     }
 }
 
 function drawBalls() {
     balls.forEach(ball => {
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
         ctx.fillStyle = ball.color;
-        ctx.fill();
-        ctx.closePath();
+        ctx.fillRect(ball.x, ball.y, objectSize, objectSize); // Draw square objects instead of balls
     });
 }
 
