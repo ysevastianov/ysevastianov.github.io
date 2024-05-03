@@ -51,8 +51,7 @@ function drawBalls() {
         const x = ball.x * cellSize; // Convert cell coordinates to pixel coordinates
         const y = ball.y * cellSize;
         ctx.beginPath();
-        ctx.fillRect(x, y, cellSize, cellSize); // Draw the square ball
-        /*ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);*/
+        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
         ctx.fillStyle = ball.color;
         ctx.fill();
         ctx.closePath();
