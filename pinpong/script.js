@@ -20,23 +20,24 @@ const balls = [
 ];
 
 function drawGrid() {
+    const borderWidth = 1; // Define the effective border width
+    const adjustedCellSize = cellSize - borderWidth * 2; // Adjust cell size to account for border
+
+    // Assuming the background of the canvas is set to black
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
+            const x = i * cellSize + borderWidth;
+            const y = j * cellSize + borderWidth;
+
+            // Fill the cell with color, leaving space for the black border
             ctx.fillStyle = grid[i][j];
-            ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+            ctx.fillRect(x, y, adjustedCellSize, adjustedCellSize);
         }
     }
 }
-
-/*function drawBalls() {
-    balls.forEach(ball => {
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = ball.color;
-        ctx.fill();
-        ctx.closePath();
-    });
-}*/
 
 // Drawing balls with flickering effect
 function drawBalls() {
