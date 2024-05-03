@@ -1,28 +1,33 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 400;
-canvas.height = 400;
+canvas.width = 500;  // Adjust size to fit 100x100 grid (each cell 5x5 pixels)
+canvas.height = 500;
 
-const ballRadius = 10;
-const dx = 2;
-const dy = 2;
+const gridSize = 100; // 100x100 grid
+const cellSize = canvas.width / gridSize; // Each cell size
+const grid = new Array(gridSize);
 
-// Ball properties
-const balls = [
-    { x: 150, y: 200, dx: dx, dy: dy, color: 'orange', oppositeColor: 'blue', boundaryX: canvas.width / 2 }, // Orange ball starts in blue area
-    { x: 250, y: 200, dx: -dx, dy: -dy, color: 'blue', oppositeColor: 'orange', boundaryX: canvas.width / 2 } // Blue ball starts in orange area
-];
-
-// Draw the initial split square
-function drawSquare() {
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(0, 0, canvas.width / 2, canvas.height); // Left half (blue)
-    ctx.fillStyle = 'orange';
-    ctx.fillRect(canvas.width / 2, 0, canvas.width / 2, canvas.height); // Right half (orange)
+// Initialize grid with colors
+for (let i = 0; i < gridSize; i++) {
+    grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
 }
 
-// Function to draw balls
+const ballRadius = 5;
+const balls = [
+    { x: 125, y: 250, dx: 2, dy: 2, color: 'orange' },
+    { x: 375, y: 250, dx: -2, dy: -2, color: 'blue' }
+];
+
+function drawGrid() {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            ctx.fillStyle = grid[i][j];
+            ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+        }
+    }
+}
+
 function drawBalls() {
     balls.forEach(ball => {
         ctx.beginPath();
@@ -33,18 +38,15 @@ function drawBalls() {
     });
 }
 
-// Function to update the game state
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawSquare();
+    drawGrid();
     drawBalls();
-    
+
     balls.forEach(ball => {
-        // Move the balls
         ball.x += ball.dx;
         ball.y += ball.dy;
 
-        // Wall collision detection
         if (ball.x + ballRadius > canvas.width || ball.x - ballRadius < 0) {
             ball.dx = -ball.dx;
         }
@@ -52,19 +54,8 @@ function updateGame() {
             ball.dy = -ball.dy;
         }
 
-        // Color boundary collision detection and direction change
-        if ((ball.color === 'orange' && ball.x > ball.boundaryX) ||
-            (ball.color === 'blue' && ball.x < ball.boundaryX)) {
-            ball.dx = -ball.dx; // Change direction
+        // Check for collision with grid squares
+        let gridX = Math.floor(ball.x / cellSize);
+        let gridY = Math.floor(ball.y / cellSize);
 
-            // Color change logic
-            ctx.fillStyle = ball.color;
-            ctx.beginPath();
-            ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.closePath();
-        }
-    });
-}
-
-setInterval(updateGame, 10);
+        if (grid[gridX][gridY
