@@ -44,7 +44,7 @@ pre::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.2, 1);
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, transparent 40%, black 80%);
@@ -63,6 +63,6 @@ pre::after {
         padding: 25px; /* Larger padding */
     }
     pre::after {
-        transform: translate(-50%, -50%) scale(3); /* Larger scale for the radial gradient effect */
+        transform: translate(-50%, -50%) scale(2.5, 1); /* Larger scale for the radial gradient effect */
     }
 }
