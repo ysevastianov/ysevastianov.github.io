@@ -21,7 +21,7 @@ canvas {
     width: 200px;
     height: 200px;
     filter: blur(0.5px) saturate(4);
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .overlay {
@@ -31,7 +31,7 @@ canvas {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle, transparent 20%, black 140%);
-        transform: translate(-50%, -50%) scale(1.05);
+    transform: scale(1.05);
     pointer-events: none; /* Makes sure the overlay doesn't interfere with canvas interaction */
 }
 
