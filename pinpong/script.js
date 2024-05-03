@@ -13,7 +13,7 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
 }
 
-const ballRadius = 5;
+const ballRadius = 12;
 const balls = [
     { x: 120, y: 220, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
     { x: 370, y: 330, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
@@ -31,8 +31,7 @@ function drawGrid() {
 function drawBalls() {
     balls.forEach(ball => {
         ctx.beginPath();
-        /*ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);*/
-        ctx.fillRect(ball.x, ball.y, cellSize, cellSize);
+        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
         ctx.fillStyle = ball.color;
         ctx.fill();
         ctx.closePath();
