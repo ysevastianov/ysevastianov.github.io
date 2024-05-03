@@ -13,10 +13,16 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'lime' : 'black');
 }
 
-const ballRadius = 4;
+/*const ballRadius = 4;
 const balls = [
     { x: 44, y: 55, dx: 2, dy: 2, color: 'black', targetColor: 'lime' },
     { x: 155, y: 40, dx: -2, dy: -2, color: 'lime', targetColor: 'black' }
+];*/
+
+
+const balls = [
+    { x: 4, y: 5, dx: 1, dy: 1, color: 'black', targetColor: 'lime' }, // Use cell indices instead of pixel values
+    { x: 15, y: 4, dx: -1, dy: -1, color: 'lime', targetColor: 'black' }
 ];
 
 function drawGrid() {
@@ -42,12 +48,11 @@ function drawGrid() {
 // Drawing balls with flickering effect
 function drawBalls() {
     balls.forEach(ball => {
-        if (ball.color === 'lime') {
-            ctx.shadowColor = 'lime';
-            ctx.shadowBlur = 20; // Flickering effect shadow
-        }
+        const x = ball.x * cellSize; // Convert cell coordinates to pixel coordinates
+        const y = ball.y * cellSize;
         ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
+        ctx.fillRect(x, y, cellSize, cellSize); // Draw the square ball
+        /*ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);*/
         ctx.fillStyle = ball.color;
         ctx.fill();
         ctx.closePath();
@@ -70,13 +75,23 @@ function updateGame() {
         ball.x += ball.dx;
         ball.y += ball.dy;
 
-        // Wall collision detection
+        /*// Wall collision detection
         if (ball.x + ballRadius > canvas.width || ball.x - ballRadius < 0) {
             ball.dx = -ball.dx;
         }
         if (ball.y + ballRadius > canvas.height || ball.y - ballRadius < 0) {
             ball.dy = -ball.dy;
+        }*/
+        // Boundary checks to keep within the grid
+        if (ball.x >= gridSize || ball.x < 0) {
+            ball.dx = -ball.dx;
+            ball.x += ball.dx;
         }
+        if (ball.y >= gridSize || ball.y < 0) {
+            ball.dy = -ball.dy;
+            ball.y += ball.dy;
+        }
+        grid[ball.y][ball.x] = ball.color;
 
         // Check for collision with grid squares
         let gridX = Math.floor(ball.x / cellSize);
