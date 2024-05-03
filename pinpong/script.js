@@ -13,7 +13,7 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'lime' : 'black');
 }
 
-const ballRadius = 4;
+const ballRadius = 5;
 const balls = [
     { x: 44, y: 55, dx: 2, dy: 2, color: 'black', targetColor: 'lime' },
     { x: 155, y: 40, dx: -2, dy: -2, color: 'lime', targetColor: 'black' }
@@ -53,11 +53,6 @@ function drawBalls() {
     });
 }
 
-// Optionally apply blur using canvas context directly
-ctx.filter = 'blur(0.5px)';
-// Draw elements that need blurring
-ctx.filter = 'none'; // Reset filter after use
-
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawGrid();
@@ -68,21 +63,12 @@ function updateGame() {
         ball.x += ball.dx;
         ball.y += ball.dy;
 
-        /*// Wall collision detection
+        // Wall collision detection
         if (ball.x + ballRadius > canvas.width || ball.x - ballRadius < 0) {
             ball.dx = -ball.dx;
         }
         if (ball.y + ballRadius > canvas.height || ball.y - ballRadius < 0) {
             ball.dy = -ball.dy;
-        }*/
-        // Boundary checks to keep within the grid
-        if (ball.x >= gridSize || ball.x < 0) {
-            ball.dx = -ball.dx;
-            ball.x += ball.dx;
-        }
-        if (ball.y >= gridSize || ball.y < 0) {
-            ball.dy = -ball.dy;
-            ball.y += ball.dy;
         }
 
         // Check for collision with grid squares
