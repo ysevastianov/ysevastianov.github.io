@@ -58,4 +58,10 @@ function updateGame() {
         let gridX = Math.floor(ball.x / cellSize);
         let gridY = Math.floor(ball.y / cellSize);
 
-        if (grid[gridX][gridY
+        if (grid[gridX][gridY] !== ball.color) {
+            grid[gridX][gridY] = ball.color;
+        }
+    });
+}
+
+setInterval(updateGame, 10);
