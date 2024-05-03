@@ -36,7 +36,7 @@ pre {
     box-sizing: border-box;
     overflow: hidden; /* Ensures no text spills outside the container */
     position: relative;
-    transform: scale(1.2, 1);
+    transform: translate(-50%, -50%) scale(1.2, 1);
     filter: blur(0.5px);
 }
 
@@ -64,6 +64,6 @@ pre::after {
         padding: 25px; /* Larger padding */
     }
     pre::after {
-        transform: scale(2.5, 1); /* Larger scale for the radial gradient effect */
+        transform: translate(-50%, -50%) scale(2.5, 1); /* Larger scale for the radial gradient effect */
     }
 }
