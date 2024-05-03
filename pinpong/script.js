@@ -15,8 +15,8 @@ for (let i = 0; i < gridSize; i++) {
 
 const ballRadius = 5;
 const balls = [
-    { x: 125, y: 250, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
-    { x: 375, y: 250, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
+    { x: 125, y: 200, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
+    { x: 375, y: 300, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
 ];
 
 function drawGrid() {
