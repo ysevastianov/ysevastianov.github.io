@@ -13,7 +13,7 @@ for (let i = 0; i < gridSize; i++) {
     grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
 }
 
-const ballRadius = 9;
+const ballRadius = 4;
 const balls = [
     { x: 120, y: 220, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
     { x: 370, y: 330, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
