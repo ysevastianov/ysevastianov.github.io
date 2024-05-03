@@ -1,34 +1,41 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 500;  // Size of canvas remains
+canvas.width = 500;  // Size of canvas - each cell being 5x5 for a 100x100 grid
 canvas.height = 500;
 
-const gridCols = 40; // Total number of columns (20 per half)
-const gridRows = 20; // Total number of rows
-const cellSize = canvas.width / gridCols; // Each cell size adjusted
+const gridSize = 20; // Number of cells in one row/column
+const cellSize = canvas.width / gridSize; // Size of each cell in pixels
+const grid = new Array(gridSize);
 
-const grid = new Array(gridRows).fill(null).map(() => new Array(gridCols).fill('blue').fill('orange', gridCols / 2));
+// Initialize the grid with alternating colors
+for (let i = 0; i < gridSize; i++) {
+    grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
+}
 
-const objectSize = cellSize; // Objects are now the same size as cells
+const ballRadius = 5;
 const balls = [
-    { x: objectSize * 10, y: objectSize * 10, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
-    { x: objectSize * 30, y: objectSize * 10, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
+    { x: 120, y: 220, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
+    { x: 370, y: 330, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
 ];
 
 function drawGrid() {
-    for (let i = 0; i < gridRows; i++) {
-        for (let j = 0; j < gridCols; j++) {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
             ctx.fillStyle = grid[i][j];
-            ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+            ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
         }
     }
 }
 
 function drawBalls() {
     balls.forEach(ball => {
+        ctx.beginPath();
+        /*ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);*/
+        ctx.fillRect(ball.x, ball.y, cellSize, cellSize);
         ctx.fillStyle = ball.color;
-        ctx.fillRect(ball.x, ball.y, objectSize, objectSize); // Draw square objects instead of balls
+        ctx.fill();
+        ctx.closePath();
     });
 }
 
