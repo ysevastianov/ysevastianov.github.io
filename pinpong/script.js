@@ -61,9 +61,13 @@ function updateGame() {
         let gridY = Math.floor(ball.y / cellSize);
 
         // Change the color of the grid square if it matches the target color of the ball
-        if (grid[gridX][gridY] === ball.targetColor) {
-            grid[gridX][gridY] = ball.color;  // Change to ball's color
+        if (grid[gridX][gridY] === ball.color) {
+            grid[gridX][gridY] = ball.targetColor;  // Change to ball's color
+
+            ball.dx = -ball.dx;
+            ball.dy = -ball.dy;
         }
+        
     });
 }
 
