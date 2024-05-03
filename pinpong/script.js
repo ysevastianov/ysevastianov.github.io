@@ -71,4 +71,4 @@ function updateGame() {
     });
 }
 
-setInterval(updateGame, 2);
+setInterval(updateGame, 20);
