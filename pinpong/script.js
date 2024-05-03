@@ -10,13 +10,13 @@ const grid = new Array(gridSize);
 
 // Initialize the grid with alternating colors
 for (let i = 0; i < gridSize; i++) {
-    grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'blue' : 'orange');
+    grid[i] = new Array(gridSize).fill(i < gridSize / 2 ? 'lime' : 'black');
 }
 
 const ballRadius = 4;
 const balls = [
-    { x: 44, y: 55, dx: 2, dy: 2, color: 'orange', targetColor: 'blue' },
-    { x: 155, y: 40, dx: -2, dy: -2, color: 'blue', targetColor: 'orange' }
+    { x: 44, y: 55, dx: 2, dy: 2, color: 'black', targetColor: 'lime' },
+    { x: 155, y: 40, dx: -2, dy: -2, color: 'lime', targetColor: 'black' }
 ];
 
 function drawGrid() {
