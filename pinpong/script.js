@@ -10,8 +10,8 @@ const dy = 2;
 
 // Ball properties
 const balls = [
-    { x: 150, y: 200, dx: dx, dy: dy, color: 'orange' }, // Orange ball in blue area
-    { x: 250, y: 200, dx: -dx, dy: -dy, color: 'blue' }   // Blue ball in orange area
+    { x: 150, y: 200, dx: dx, dy: dy, color: 'orange', oppositeColor: 'blue', boundaryX: canvas.width / 2 }, // Orange ball starts in blue area
+    { x: 250, y: 200, dx: -dx, dy: -dy, color: 'blue', oppositeColor: 'orange', boundaryX: canvas.width / 2 } // Blue ball starts in orange area
 ];
 
 // Draw the initial split square
@@ -52,14 +52,17 @@ function updateGame() {
             ball.dy = -ball.dy;
         }
 
-        // Pixel color collision detection and change
-        const pixel = ctx.getImageData(ball.x, ball.y, 1, 1).data;
-        const pixelColor = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+        // Color boundary collision detection and direction change
+        if ((ball.color === 'orange' && ball.x > ball.boundaryX) ||
+            (ball.color === 'blue' && ball.x < ball.boundaryX)) {
+            ball.dx = -ball.dx; // Change direction
 
-        if ((pixelColor === 'rgb(0, 0, 255)' && ball.color === 'orange') || // Blue and orange ball
-            (pixelColor === 'rgb(255, 165, 0)' && ball.color === 'blue')) { // Orange and blue ball
+            // Color change logic
             ctx.fillStyle = ball.color;
-            ctx.fillRect(ball.x - ballRadius, ball.y - ballRadius, ballRadius * 2, ballRadius * 2);
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
         }
     });
 }
