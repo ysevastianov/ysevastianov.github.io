@@ -20,8 +20,8 @@ canvas {
     border: 1px solid lime;
     width: 200px;
     height: 200px;
-    filter: blur(0.5px) saturate(4);
-    transform: scale(0.95, 1.05);
+    filter: blur(1px) saturate(4);
+    transform: scale(0.9, 1.2);
 }
 
 .overlay {
@@ -30,8 +30,8 @@ canvas {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, transparent 20%, black 140%);
-    transform: scale(0.95, 1.05);
+    background: radial-gradient(circle, transparent 0%, black 140%);
+    transform: scale(0.9, 1.2);
     pointer-events: none; /* Makes sure the overlay doesn't interfere with canvas interaction */
 }
 
