@@ -10,8 +10,8 @@ body, html {
 
 .canvas-container {
     position: relative;
-    width: 202px;
-    height: 202px;
+    width: 204px;
+    height: 204px;
 }
 canvas {
     display: block;
