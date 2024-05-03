@@ -1,14 +1,35 @@
-body, html {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 canvas {
-    background-color: lime;
-    border: 3px solid lime;
+    display: block; /* Ensures the canvas is properly displayed */
+    margin: auto; /* Center the canvas horizontally */
+    background-color: #000;
+    box-shadow: inset 0 0 20px #000; /* Inner shadow for depth */
+    filter: saturate(4) blur(0.5px); /* Enhance color saturation and apply slight blur */
+    animation: flicker 1s infinite; /* Apply flickering effect */
+    width: 200px; /* Specify a fixed width or use 100% for full width */
+    height: 200px; /* Maintain aspect ratio */
+    border-radius: 10%; /* Optional: round corners for a tube-like effect */
+}
+
+@keyframes flicker {
+    0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.8); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 0, 1); }
+}
+
+/* Radial gradient overlay to simulate curvature of an old monitor */
+canvas::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, black 80%);
+    pointer-events: none;
 }
