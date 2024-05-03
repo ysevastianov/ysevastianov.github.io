@@ -65,7 +65,7 @@ function updateGame() {
             grid[gridX][gridY] = ball.targetColor;  // Change to ball's color
 
             ball.dx = -ball.dx;
-            ball.dy = -ball.dy;
+            /*ball.dy = -ball.dy;*/
         }
         
     });
