@@ -20,6 +20,7 @@ canvas {
     border: 1px solid lime;
     width: 200px;
     height: 200px;
+    filter: blur(0.5px);
 }
 
 .overlay {
@@ -29,7 +30,6 @@ canvas {
     right: 0;
     bottom: 0;
     background: radial-gradient(circle, transparent 20%, black 160%);
-    filter: blur(1px);
     pointer-events: none; /* Makes sure the overlay doesn't interfere with canvas interaction */
 }
 
